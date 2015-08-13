@@ -219,7 +219,7 @@ h6,
   -webkit-text-size-adjust: none; }
 
 .highlight .c1 {
-  color: #777;
+  color: #ccc;
   font-style: italic; }
 
 .highlight .k,
@@ -678,6 +678,27 @@ pre a:last-of-type::before {
 
 pre a:only-of-type::before {
   padding: 10px; }
+
+.s {
+  color: #f95020; }
+
+.c {
+  color: #ccc; }
+
+.kn {
+  color: #333; }
+
+.mh {
+  color: #00ab37; }
+
+.se {
+  color: #f92080; }
+
+.nf {
+  color: #f92080; }
+
+.nv {
+  color: #0076df; }
 
 input,
 select,

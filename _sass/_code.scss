@@ -64,3 +64,31 @@ pre a:last-of-type::before {
 pre a:only-of-type::before {
   padding: 10px;
 }
+
+.s {
+  color: $hljs-string;
+}
+
+.c {
+  color: $hljs-comment;
+}
+
+.kn {
+  color: $hljs-keyword;
+}
+
+.mh {
+  color: $hljs-number;
+}
+
+.se {
+  color: $purple;
+}
+
+.nf {
+  color: $purple;
+}
+
+.nv {
+  color: $blue;
+}
