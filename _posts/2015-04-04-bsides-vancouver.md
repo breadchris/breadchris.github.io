@@ -312,4 +312,4 @@ flag{something or other}  # Not the actual flag, running locally
 $ 
 {% endhighlight %}
 
-Not too bad of a challenge, really was more reversing than actually exploitation. So when it all boils down, you have to reverse a basic command protocol, exploit and integer overflow and use metacharacter injection. For 200 points I would say that is reasonable :D
+Not too bad of a challenge, really was more reversing than actually exploitation. So when it all boils down, you have to reverse a basic command protocol, exploit an integer overflow and use metacharacter injection. For 200 points I would say that is reasonable :D
