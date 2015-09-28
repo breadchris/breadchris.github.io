@@ -2,7 +2,7 @@
 layout:     post
 title:      CSAW CTF 2015 - Contacts
 date:       2015-09-28 12:00:00
-summary:    A hand full of vulns = 1 shell
+summary:    3 vulns, 1 shell
 categories: ctf exploit overflow format-string
 ---
 
