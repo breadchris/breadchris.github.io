@@ -14,7 +14,7 @@ The more rare vulnerabilities are the mobile RCE exploits. The best example of t
 
 When I saw Google CTF <year> had put together mobile CTF challenges you could exploit remotely on their servers, I thought it was the coolest shit. There needed to be a way to bring the realm of mobile exploitation into CTF challenges. This was the excitement that people needed to start looking at this field.
 
-## why Android pwnables are hard to run
+## 👷why Android pwnables are hard to run
 
 Most pwnable problems that you see in CTFs are individual binaries that can run by themselves in a Dockerfile with a super small memory footprint. This is especially important when you are dealing with many requests and all your process needs to do is fork itself. To let people exploit APKs, we need to run them seperately, spinning up an emulator each time to make sure people do not do anything funny to other people's submissions.
 
@@ -24,7 +24,7 @@ So for getting all of these emulators, we need a VM with the entire Android SDK 
 
 system-image's are quite big:
 
-```
+{% highlight raw lineanchors %}
 ➜  android-28 du -h .
 6.6G	./default/x86
 3.1G	./default/x86_64
@@ -35,25 +35,25 @@ system-image's are quite big:
 6.6G	./google_apis_playstore/x86
 6.6G	./google_apis_playstore
 16G	.
-```
+{% endhighlight %}
 
 But fortunately, we only need to download this once (if we only have challenges for one API level). For each emulator we will still need a decent amount of space:
 
-```
+{% highlight raw lineanchors %}
 ➜  android_P_x86_64.avd du -h .
 565M	.
-```
+{% endhighlight %}
 
-## how many emulators will (more like can) we run
+## 🔢How many emulators will (more like can) we run
 
 This is a question that comes to one thing: optimization. Since Android emulators run in [qemu](https://www.qemu.org/), we are going to be taking a big hit on performance right off the bat. Lucky for us, emulators have [KVM support](https://developer.android.com/studio/run/emulator-acceleration). If we want to take advantage of this enhancement, we will need to host our challenges from something that supports KVM. For h1-702, I used [digital ocean](https://www.digitalocean.com/). EC2 did not have this support however, so be careful about where you are looking to host your problems. 
 
 When the emulators are running, they take up quite a bit of memory and CPU:
 
-```
+{% highlight raw lineanchors %}
 PID	Name		  CPU %  Time	   	  		RAM
 57998   qemu-system-x86_  214.6  00:19.46  50/2   2     319+    825M+   7264K   0B      57998  50258  running   *0[5]
-```
+{% endhighlight %}
 
 Now, ideally we do not really need a lot of the stuff the emulator has. Most noteable being the screen. Checking out the [Android emulator docs](https://developer.android.com/studio/run/emulator-commandline) we can see a bunch of options that are useful for us:
 
@@ -66,32 +66,32 @@ The big "doh!" here was when I was solving a challenge and was wondering why not
 
 At this point, I just had an unreliable submission server with a pretty slow emulator. Given that there were hundreds of people play in this CTF, I could not have this go live so I just ended up having people send me their APKs and I ran them by hand. A very unfortunate solution, but at least I had my own personal submission server!
 
-## how do i prevent people from yelling at me every second about their "exploit working locally, but not remotely"
+## 😤How do I prevent people from yelling at me every second about their "exploit working locally, but not remotely"
 
 The easiest way to prevent this is give them the exact setup that you are using on your server, down to the ways that you are invoking their APK. It is imporant to be explicit and verbose about this. I ran into problems when I made a challenge that required people to call the JVM garbage collector and did not realize how unpredictable triggering the GC was. It ended up being a huge nusance :(
 
-## why did you make your own thing for this?
+## 💻Why did you make your own thing for this?
 
 In hind sight, I should have just gone with [android-farm](https://medium.com/@Malinskiy/android-ci-with-kubernetes-684713a83eec), but on first glance it seemed unnesesarily complicated for my use case (I just had to run emulators right?). It seems the authors of this tool ran into the same exact problems I did with adb:
 
-```
+{% highlight raw lineanchors %}
 We’ve also added the following to the adb-butler:
 
 * clean up of soon-to-be-unavailable emulators
 * ability to automatically add notes to stf devices
 * automatic installation of Linkedin’s test-butler for emulators
-```
+{% endhighlight %}
 
 Setting this up seems like quite the job, maybe a topic for a future blog post...
 
 I still see a niche for the submission server I had written for this CTF, and I will still work on developing it further. This would have been more successful had I had been smart and wrote challenges that did not depend on graphics being rendered.
 
-## can we emulate other devices for even cooler CTF problems?
+## 📱Can we emulate other devices for even cooler CTF problems?
 
 It seems like there is quite a bit of work to make this work at scale, but ideally we should be able to emulate pretty much anything with qemu, even [macos](https://github.com/kholia/OSX-KVM). There is for sure some interesting avenues to pursue here and probably something I will explore for future CTFs.
 
 An example of cool stuff people are doing with hardware is the [Riscure Embedded Hardware Challenge](https://www.youtube.com/watch?v=u_U6F2Kkbb0) which gave contestants an arduino with CAN bus firmware. I hope to see more of this stuff in the future since hardware security (IoT, cars,  routers, etc.) has become the talk of the town.
 
-## where the code be?
+## 🏎️Where the code be?
 
 You can check out the shitty APK submission server I put together [here](). If you feel inclined to work on making this better, I will for sure work with you on your PRs.
