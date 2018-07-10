@@ -33,7 +33,7 @@ NX is disabled which suggests that we are more than likely gonna wanna be using 
 
 Now let's checkout what this thing actually looks like:
 
-{% highlight bash lineanchors %}
+{% highlight raw lineanchors %}
 [vagrant@kamino csaw2015finals]$ ./hipster
 Sieg Heil!
 Welcome to Hipster Hitler's Pocket Calculator!

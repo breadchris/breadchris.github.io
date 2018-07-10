@@ -1,8 +1,8 @@
 ---
-layout:     post
-title:      Android Pwnable CTF Challenges
-date:       2018-06-10 14:05:00
-summary:    Running Android pwn challenges lessons learned and next steps
+title: Android Pwnable CTF Challenges
+layout: post
+date: '2018-06-10 07:05:00 -0700'
+summary: Running Android pwn challenges lessons learned and next steps
 categories: ctf android
 ---
 
@@ -89,6 +89,8 @@ I still see a niche for the submission server I had written for this CTF, and I 
 ## can we emulate other devices for even cooler CTF problems?
 
 It seems like there is quite a bit of work to make this work at scale, but ideally we should be able to emulate pretty much anything with qemu, even [macos](https://github.com/kholia/OSX-KVM). There is for sure some interesting avenues to pursue here and probably something I will explore for future CTFs.
+
+An example of cool stuff people are doing with hardware is the [Riscure Embedded Hardware Challenge](https://www.youtube.com/watch?v=u_U6F2Kkbb0) which gave contestants an arduino with CAN bus firmware. I hope to see more of this stuff in the future since hardware security (IoT, cars,  routers, etc.) has become the talk of the town.
 
 ## where the code be?
 

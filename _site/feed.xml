@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Little (1 &lt;&lt; 3) + y</title>
-    <description>Blades out like Wolverine, but it was all a huge act man. ~ octobersveryown</description>
+    <title>Hello, and Thanks for All the Fish</title>
+    <description>A most excellent adventure in %20</description>
     <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 10 Jul 2018 02:03:32 -0700</pubDate>
+    <lastBuildDate>Tue, 10 Jul 2018 02:03:32 -0700</lastBuildDate>
+    <generator>Jekyll v3.5.2</generator>
     
       <item>
         <title>Making h1-ctfs</title>
@@ -33,6 +36,12 @@
         <pubDate>Sun, 10 Jun 2018 07:05:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/hackerone/2018/06/10/making-h1-ctfs/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/hackerone/2018/06/10/making-h1-ctfs/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>hackerone</category>
+        
       </item>
     
       <item>
@@ -123,6 +132,8 @@
 
 &lt;p&gt;It seems like there is quite a bit of work to make this work at scale, but ideally we should be able to emulate pretty much anything with qemu, even &lt;a href=&quot;https://github.com/kholia/OSX-KVM&quot;&gt;macos&lt;/a&gt;. There is for sure some interesting avenues to pursue here and probably something I will explore for future CTFs.&lt;/p&gt;
 
+&lt;p&gt;An example of cool stuff people are doing with hardware is the &lt;a href=&quot;https://www.youtube.com/watch?v=u_U6F2Kkbb0&quot;&gt;Riscure Embedded Hardware Challenge&lt;/a&gt; which gave contestants an arduino with CAN bus firmware. I hope to see more of this stuff in the future since hardware security (IoT, cars,  routers, etc.) has become the talk of the town.&lt;/p&gt;
+
 &lt;h2 id=&quot;where-the-code-be&quot;&gt;where the code be?&lt;/h2&gt;
 
 &lt;p&gt;You can check out the shitty APK submission server I put together &lt;a href=&quot;&quot;&gt;here&lt;/a&gt;. If you feel inclined to work on making this better, I will for sure work with you on your PRs.&lt;/p&gt;
@@ -130,6 +141,12 @@
         <pubDate>Sun, 10 Jun 2018 07:05:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>android</category>
+        
       </item>
     
       <item>
@@ -158,22 +175,22 @@ No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RU
 
 &lt;p&gt;Now let’s checkout what this thing actually looks like:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vagrant@kamino csaw2015finals]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./hipster
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-raw&quot; data-lang=&quot;raw&quot;&gt;[vagrant@kamino csaw2015finals]$ ./hipster
 Sieg Heil!
-Welcome to Hipster Hitler&lt;span class=&quot;s1&quot;&gt;'s Pocket Calculator!
+Welcome to Hipster Hitler's Pocket Calculator!
 My computing resources await you, mein Führer.
 We now use Reverse Polish Notation as a result of our recent conquest of Poland.
-All commands are prefixed with '&lt;/span&gt;:&lt;span class=&quot;s1&quot;&gt;'.
+All commands are prefixed with ':'.
 Type :help for a list of commands.
 ==&amp;gt; :help
-His Excellency'&lt;/span&gt;s available commands:
-top  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Display top value of the currently selected stack.
-new  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Create a new stack and switch to it.
-del  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Delete currently selected stack.
-disp &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Display all values on stack.
-next &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Switch between active stacks.
-quit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;gt; Exit the calculator.
-&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+His Excellency's available commands:
+top  =&amp;gt; Display top value of the currently selected stack.
+new  =&amp;gt; Create a new stack and switch to it.
+del  =&amp;gt; Delete currently selected stack.
+disp =&amp;gt; Display all values on stack.
+next =&amp;gt; Switch between active stacks.
+quit =&amp;gt; Exit the calculator.
+==&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;So from inital inspection, this appears to be a stack based calculator in which you can create different different calculation stacks. And apparently “Reverse Polish Notation” is just postfix notation which just makes it easier to program a stack based calculator.&lt;/p&gt;
 
@@ -515,6 +532,18 @@ stack2+164  numbers and stuff
         <pubDate>Wed, 25 Nov 2015 04:00:00 -0800</pubDate>
         <link>http://localhost:4000/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>exploit</category>
+        
+        <category>heap</category>
+        
+        <category>overflow</category>
+        
+        <category>shellcode</category>
+        
       </item>
     
       <item>
@@ -603,6 +632,14 @@ Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RU
         <pubDate>Mon, 28 Sep 2015 05:00:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>exploit</category>
+        
+        <category>overflow</category>
+        
       </item>
     
       <item>
@@ -1028,6 +1065,16 @@ Contacts:
         <pubDate>Mon, 28 Sep 2015 05:00:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>exploit</category>
+        
+        <category>overflow</category>
+        
+        <category>format-string</category>
+        
       </item>
     
       <item>
@@ -1188,6 +1235,12 @@ team: ELF 32-bit LSB executable, Intel 80386, version 1 &lt;span class=&quot;o&q
         <pubDate>Mon, 04 May 2015 05:00:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>format-string</category>
+        
       </item>
     
       <item>
@@ -1484,6 +1537,12 @@ flag&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;something or other&lt;span cla
         <pubDate>Sat, 04 Apr 2015 05:00:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/format-string/2015/04/04/bsides-vancouver/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/format-string/2015/04/04/bsides-vancouver/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>format-string</category>
+        
       </item>
     
       <item>
@@ -1515,6 +1574,14 @@ fusion@fusion:~$ sudo gdb
         <pubDate>Wed, 21 Jan 2015 04:00:00 -0800</pubDate>
         <link>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/21/fusion/</link>
         <guid isPermaLink="true">http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/21/fusion/</guid>
+        
+        
+        <category>wargames</category>
+        
+        <category>fusion</category>
+        
+        <category>exploit-exercises</category>
+        
       </item>
     
       <item>
@@ -1603,6 +1670,14 @@ fusion@fusion:~$ sudo gdb
         <pubDate>Tue, 20 Jan 2015 04:00:00 -0800</pubDate>
         <link>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/20/fusion/</link>
         <guid isPermaLink="true">http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/20/fusion/</guid>
+        
+        
+        <category>wargames</category>
+        
+        <category>fusion</category>
+        
+        <category>exploit-exercises</category>
+        
       </item>
     
       <item>
@@ -1680,6 +1755,12 @@ fusion@fusion:~$ sudo gdb
         <pubDate>Sat, 10 Jan 2015 06:05:00 -0800</pubDate>
         <link>http://localhost:4000/ctf/javascript/2015/01/10/jspuzzle/</link>
         <guid isPermaLink="true">http://localhost:4000/ctf/javascript/2015/01/10/jspuzzle/</guid>
+        
+        
+        <category>ctf</category>
+        
+        <category>javascript</category>
+        
       </item>
     
   </channel>

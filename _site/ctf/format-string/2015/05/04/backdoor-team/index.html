@@ -1,125 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Backdoor CTF 2015 team Writeup &#8211; A Little (1 << 3) + y</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Easy format string challenge writeup">
-    <meta name="author" content="Chris">
-    <meta name="keywords" content="ctf, format-string">
-    <link rel="canonical" href="http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/">
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed for A Little (1 << 3) + y" href="/feed.xml" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201807100044" type="text/css">
-    <link rel="stylesheet" href="/css/prism.css?201807100044" type="text/css">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Fonts -->
-    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
-    
-      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    
+  <title>Backdoor CTF 2015 team Writeup</title>
+  <meta name="description" content="TL;DR  Format string">
 
-
-    <!-- Open Graph -->
-    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Backdoor CTF 2015 team Writeup">
-    <meta property="og:description" content="Blades out like Wolverine, but it was all a huge act man. ~ octobersveryown">
-    <meta property="og:url" content="http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/">
-    <meta property="og:site_name" content="A Little (1 &lt;&lt; 3) + y">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    
-        <meta name="twitter:site" content="@breadchris" />
-    
-    <meta name="twitter:title" content="Backdoor CTF 2015 team Writeup" />
-    <meta name="twitter:description" content="Easy format string challenge writeup" />
-    <meta name="twitter:url" content="http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/" />
-
-    <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x12">
-    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-        
-    
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,700|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/">
+  <link rel="alternate" type="application/rss+xml" title="Hello, and Thanks for All the Fish" href="http://localhost:4000/feed.xml">
 </head>
 
-<body class="site">
-  <div class="site-wrap">
-    <header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <a href="http://localhost:4000" class="site-title">A Little (1 << 3) + y</a>
-      <nav class="site-nav">
-        <a href="/about/">About</a>
-<a href="/contact/">Contact</a>
 
-      </nav>
-      <div class="clearfix"></div>
-      
-        <div class="social-icons">
-  <div class="left">
-    
-      <a class="fa fa-github" href="https://github.com/breadchris"></a>
-    
-    
-    <a class="fa fa-rss" href="/feed.xml"></a>
-    
-      <a class="fa fa-twitter" href="https://twitter.com/breadchris"></a>
-    
-    
-    
-    
-    
-  </div>
-  <div class="right">
-    
-    
-    
-  </div>
-</div>
-<div class="clearfix"></div>
+  <body>
+    <div class="site-wrap">
+      <header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="http://localhost:4000/">Hello, and Thanks for All the Fish</a>
 
-      
-    </div>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+
+        <a href="/feed.xml" class="page-link">RSS</a>
+      </div>
+    </nav>
   </div>
 </header>
 
 
-    <div class="post p2 p-responsive wrap" role="main">
-      <div class="measure">
-        
+      <div class="page-content">
+        <div class="wrapper">
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Backdoor CTF 2015 team Writeup</h1>
+    <p class="post-meta"><time datetime="2015-05-04T05:00:00-07:00" itemprop="datePublished">May 04, 2015</time></p>
+  </header>
 
-<div class="post-header mb2">
-  <h1>Backdoor CTF 2015 team Writeup</h1>
-  <span class="post-meta">May 4, 2015</span><br>
-    
-  <span class="post-meta small">
-  
-    8 minute read
-  
-  </span>
-</div>
-
-<article class="post-content">
-  <h2 id="tldr">TL;DR</h2>
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="tldr">TL;DR</h2>
 <ul>
   <li>Format string</li>
 </ul>
@@ -272,29 +217,40 @@ team: ELF 32-bit LSB executable, Intel 80386, version 1 <span class="o">(</span>
 
 <p>I would show the work that I did</p>
 
+  </div>
+
 </article>
 
+        </div>
+      </div>
 
+      <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <div class="social-media-list">
+          
+            <a href="mailto:chris@vgcs.io">Email</a>
+          
 
+          
+            <a href="https://github.com/breadchris">Github</a>
+          
 
+          
+            <a href="https://twitter.com/breadchris">Twitter</a>
+          
+        </div>
+      </div>
 
-
-
-
-
+      <div class="footer-col footer-col-2">
+        <p>Theme made by <a href="http://masha.space/">Masha Safina</a>. Codes available on <a href="https://github.com/mashlo/captains-log">GitHub</a> 🖖</p>
       </div>
     </div>
   </div>
-
-  <footer class="center">
-  <div class="measure">
-    <small>
-      Thank you for reading dear reader, and good night...<br />
-      Blog made with &lt;3 by Breadchris<br />
-      Theme crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).
-    </small>
-  </div>
 </footer>
 
-</body>
+    </div>
+  </body>
+
 </html>

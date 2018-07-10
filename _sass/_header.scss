@@ -1,54 +1,29 @@
 .site-header {
-  padding-top: $space-1;
-  padding-bottom: $space-2;
+  position: relative;
+  padding: 1em 0 4em;
 }
 
-.site-header a {
-  color: #333;
-  font-size: $h3;
-  font-weight: 300;
+.site-title {
+  padding: 1px 0;
+  color: $title-color;
 }
 
-.site-header .site-title {
-  font-size: $h2;
-}
+/* Nav */
 
 .site-nav {
-  margin-top: $space-2;
-}
+  float: right;
 
-.site-header nav a {
-  color: #666;
-}
+  .menu-icon {
+    display: none;
+  }
 
-.site-header nav a:hover,
-.site-header nav a:focus,
-.site-header nav a:active {
-  color: #444;
-  opacity: 1;
-  border-bottom: 2px solid #444;
-}
-
-.site-nav a + a {
-  margin-left: 1em;
-}
-
-.site-header a:hover,
-.posts .post a:hover .post-meta,
-.posts .post a:hover .post-title,
-.posts .post a:hover .post-summary {
-  opacity: 0.88;
-}
-
-.site-header {
-  text-align: center;
-}
-
-.site-header .site-nav {
-  text-align: center;
-}
-
-.social-icons .left, .social-icons .right {
-  text-align: center;
-  float: none;
+  .page-link {
+    display: inline;
+    padding: 1px 0;
+    margin-left: 1em;
+    
+    &:hover {
+      color: $white-color;
+    }
+  }
 }
