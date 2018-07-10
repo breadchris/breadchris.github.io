@@ -1,41 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>breadchris.github.io/ctf/format-string/2015/05/04/backdoor-team/</loc>
-    <lastmod>2015-05-04T08:00:00-04:00</lastmod>
-  </url>
-  <url>
-    <loc>breadchris.github.io/ctf/format-string/2015/04/04/bsides-vancouver/</loc>
-    <lastmod>2015-04-04T08:00:00-04:00</lastmod>
-  </url>
-  <url>
-    <loc>breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/21/fusion/</loc>
-    <lastmod>2015-01-21T07:00:00-05:00</lastmod>
-  </url>
-  <url>
-    <loc>breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/20/fusion/</loc>
-    <lastmod>2015-01-20T07:00:00-05:00</lastmod>
-  </url>
-  <url>
-    <loc>breadchris.github.io/ctf/javascript/2015/01/10/jspuzzle/</loc>
-    <lastmod>2015-01-10T09:05:00-05:00</lastmod>
-  </url>
-  <url>
-    <loc>breadchris.github.io/404.html</loc>
-  </url>
-  <url>
-    <loc>breadchris.github.io/about/</loc>
-  </url>
-  <url>
-    <loc>breadchris.github.io/contact/</loc>
-  </url>
-  <url>
-    <loc>breadchris.github.io/</loc>
-  </url>
-  <url>
-    <loc>breadchris.github.io/thanks/</loc>
-  </url>
-  <url>
-    <loc>breadchris.github.io/page2/</loc>
-  </url>
+<url>
+<loc>http://localhost:4000/ctf/hackerone/2018/06/10/making-h1-ctfs/</loc>
+<lastmod>2018-06-10T07:05:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</loc>
+<lastmod>2018-06-10T07:05:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</loc>
+<lastmod>2015-11-25T04:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</loc>
+<lastmod>2015-09-28T05:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</loc>
+<lastmod>2015-09-28T05:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/</loc>
+<lastmod>2015-05-04T05:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/format-string/2015/04/04/bsides-vancouver/</loc>
+<lastmod>2015-04-04T05:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/21/fusion/</loc>
+<lastmod>2015-01-21T04:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/20/fusion/</loc>
+<lastmod>2015-01-20T04:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ctf/javascript/2015/01/10/jspuzzle/</loc>
+<lastmod>2015-01-10T06:05:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/404.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/about/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/contact/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/thanks/</loc>
+</url>
 </urlset>
