@@ -95,4 +95,4 @@ An example of cool stuff people are doing with hardware is the [Riscure Embedded
 
 ## 🏎️ Where the code be?
 
-You can check out the shitty APK submission server I put together [here](). If you feel inclined to work on making this better, I will for sure work with you on your PRs.
+You can check out the shitty APK submission server I put together [here](https://github.com/breadchris/apk-submission-queue). If you feel inclined to work on making this better, I will for sure work with you on your PRs.
