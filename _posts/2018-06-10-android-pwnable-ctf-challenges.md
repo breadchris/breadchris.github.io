@@ -6,7 +6,7 @@ summary: Running Android pwn challenges lessons learned and next steps
 categories: ctf android
 ---
 
-In h1-702 2018, I finally go around to writing some Android pwnable challenges which I have been meaning to do for a while. There have not been that many mobile CTF problems in the past (a nice list of which can be checked out [here](https://github.com/xtiankisutsa/awesome-mobile-CTF)). I found myself making quite a few mobile CTF problems over the past few [ctfs I helped make](), and they all ended up being reverse engineering problems. While the problems ended up turning out decently, I saw myself closing in on interesting problems that I could conjure up for the mobile category. 
+In h1-702 2018, I finally go around to writing some Android pwnable challenges which I have been meaning to do for a while. There have not been that many mobile CTF problems in the past (a nice list of which can be checked out [here](https://github.com/xtiankisutsa/awesome-mobile-CTF)). I found myself making quite a few mobile CTF problems over the past few [ctfs I helped make](/ctf/hackerone/2018/06/10/making-h1-ctfs/), and they all ended up being reverse engineering problems. While the problems ended up turning out decently, I saw myself closing in on interesting problems that I could conjure up for the mobile category. 
 
 Mobile exploitation is an interesting field of cyber security as it is typically seen as to have a relatively low impact cieling for possible impact. However  it is hard to discount the value of this field, when someone's device has on average [$14,000 worth of information](https://www.ponemon.org/blog/how-much-is-the-data-on-your-mobile-device-worth) (I am skeptical of this number, but anything in that ballpark is still a lot of hekin money). There is a decent amount of research in this field, however it is primarily based around the mobile malware business since it is the easiest way to get on someone's device. It is pretty easy to find signs of malware within an APK, but it is much harder to find signs of foul play when your app is just exploiting [deserialization vulnerabilities](https://lgtm.com/blog/android_deserialization) as you are just sending data to another application. 
 
@@ -14,7 +14,7 @@ The more rare vulnerabilities are the mobile RCE exploits. The best example of t
 
 When I saw Google CTF <year> had put together mobile CTF challenges you could exploit remotely on their servers, I thought it was the coolest shit. There needed to be a way to bring the realm of mobile exploitation into CTF challenges. This was the excitement that people needed to start looking at this field.
 
-## 👷why Android pwnables are hard to run
+## 👷 Why Android pwnables are hard to run
 
 Most pwnable problems that you see in CTFs are individual binaries that can run by themselves in a Dockerfile with a super small memory footprint. This is especially important when you are dealing with many requests and all your process needs to do is fork itself. To let people exploit APKs, we need to run them seperately, spinning up an emulator each time to make sure people do not do anything funny to other people's submissions.
 
@@ -44,7 +44,7 @@ But fortunately, we only need to download this once (if we only have challenges 
 565M	.
 {% endhighlight %}
 
-## 🔢How many emulators will (more like can) we run
+## 🔢 How many emulators will (more like can) we run
 
 This is a question that comes to one thing: optimization. Since Android emulators run in [qemu](https://www.qemu.org/), we are going to be taking a big hit on performance right off the bat. Lucky for us, emulators have [KVM support](https://developer.android.com/studio/run/emulator-acceleration). If we want to take advantage of this enhancement, we will need to host our challenges from something that supports KVM. For h1-702, I used [digital ocean](https://www.digitalocean.com/). EC2 did not have this support however, so be careful about where you are looking to host your problems. 
 
@@ -66,32 +66,33 @@ The big "doh!" here was when I was solving a challenge and was wondering why not
 
 At this point, I just had an unreliable submission server with a pretty slow emulator. Given that there were hundreds of people play in this CTF, I could not have this go live so I just ended up having people send me their APKs and I ran them by hand. A very unfortunate solution, but at least I had my own personal submission server!
 
-## 😤How do I prevent people from yelling at me every second about their "exploit working locally, but not remotely"
+## 😤 How do I prevent people from yelling at me every second about their "exploit working locally, but not remotely"
 
 The easiest way to prevent this is give them the exact setup that you are using on your server, down to the ways that you are invoking their APK. It is imporant to be explicit and verbose about this. I ran into problems when I made a challenge that required people to call the JVM garbage collector and did not realize how unpredictable triggering the GC was. It ended up being a huge nusance :(
 
-## 💻Why did you make your own thing for this?
+## 💻 Why did you make your own thing for this?
 
 In hind sight, I should have just gone with [android-farm](https://medium.com/@Malinskiy/android-ci-with-kubernetes-684713a83eec), but on first glance it seemed unnesesarily complicated for my use case (I just had to run emulators right?). It seems the authors of this tool ran into the same exact problems I did with adb:
 
 {% highlight raw lineanchors %}
-We’ve also added the following to the adb-butler:
 
-* clean up of soon-to-be-unavailable emulators
-* ability to automatically add notes to stf devices
-* automatic installation of Linkedin’s test-butler for emulators
+* reconnecting to devices on the go (i.e. in the middle of the run)
+* rerunning the test on a different device if a failure happens and the device is out
+* visualizing the associations between the tests and the devices to identify potentially faulty devices
+* balancing the execution time of tests
+
 {% endhighlight %}
 
 Setting this up seems like quite the job, maybe a topic for a future blog post...
 
 I still see a niche for the submission server I had written for this CTF, and I will still work on developing it further. This would have been more successful had I had been smart and wrote challenges that did not depend on graphics being rendered.
 
-## 📱Can we emulate other devices for even cooler CTF problems?
+## 📱 Can we emulate other devices for even cooler CTF problems?
 
 It seems like there is quite a bit of work to make this work at scale, but ideally we should be able to emulate pretty much anything with qemu, even [macos](https://github.com/kholia/OSX-KVM). There is for sure some interesting avenues to pursue here and probably something I will explore for future CTFs.
 
 An example of cool stuff people are doing with hardware is the [Riscure Embedded Hardware Challenge](https://www.youtube.com/watch?v=u_U6F2Kkbb0) which gave contestants an arduino with CAN bus firmware. I hope to see more of this stuff in the future since hardware security (IoT, cars,  routers, etc.) has become the talk of the town.
 
-## 🏎️Where the code be?
+## 🏎️ Where the code be?
 
 You can check out the shitty APK submission server I put together [here](). If you feel inclined to work on making this better, I will for sure work with you on your PRs.
