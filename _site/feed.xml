@@ -3,10 +3,10 @@
   <channel>
     <title>See you, %20 cowboy</title>
     <description>A most excellent adventure in hacking</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Jul 2018 17:13:52 -0700</pubDate>
-    <lastBuildDate>Tue, 10 Jul 2018 17:13:52 -0700</lastBuildDate>
+    <link>https://breadchris.github.io/</link>
+    <atom:link href="https://breadchris.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 10 Jul 2018 17:15:32 -0700</pubDate>
+    <lastBuildDate>Tue, 10 Jul 2018 17:15:32 -0700</lastBuildDate>
     <generator>Jekyll v3.7.3</generator>
     
       <item>
@@ -34,8 +34,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 10 Jun 2018 07:05:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/hackerone/2018/06/10/making-h1-ctfs/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/hackerone/2018/06/10/making-h1-ctfs/</guid>
+        <link>https://breadchris.github.io/ctf/hackerone/2018/06/10/making-h1-ctfs/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/hackerone/2018/06/10/making-h1-ctfs/</guid>
         
         
         <category>ctf</category>
@@ -52,7 +52,7 @@
 
 &lt;p&gt;The more rare vulnerabilities are the mobile RCE exploits. The best example of the potential impact of these vulnerabilites can be found with the &lt;a href=&quot;https://labs.mwrinfosecurity.com/blog/webview-addjavascriptinterface-remote-code-execution/&quot;&gt;Webview.addJavascriptInterface&lt;/a&gt; vulnerability. There has been a lot of horizontal growth in this field where &lt;a href=&quot;https://github.com/linkedin/qark&quot;&gt;everyone&lt;/a&gt; &lt;a href=&quot;https://labs.mwrinfosecurity.com/tools/drozer/&quot;&gt;and&lt;/a&gt; &lt;a href=&quot;https://github.com/MobSF/Mobile-Security-Framework-MobSF&quot;&gt;their&lt;/a&gt; &lt;a href=&quot;https://github.com/AndroBugs/AndroBugs_Framework&quot;&gt;mother&lt;/a&gt; &lt;a href=&quot;https://github.com/spotbugs/spotbugs&quot;&gt;has&lt;/a&gt; &lt;a href=&quot;https://github.com/Sable/soot&quot;&gt;made&lt;/a&gt; &lt;a href=&quot;https://github.com/facebook/infer&quot;&gt;an&lt;/a&gt; &lt;a href=&quot;https://github.com/sonyxperiadev/ApkAnalyser&quot;&gt;apk&lt;/a&gt; &lt;a href=&quot;https://github.com/honeynet/apkinspector&quot;&gt;vulnerability&lt;/a&gt; &lt;a href=&quot;https://github.com/honeynet/apkinspector&quot;&gt;scanner&lt;/a&gt;. Let me be clear, this is not at all a bad thing. There are some tools that are more complete, extensive, well maintained than others, but this is a clear example of interest in this field with very little groundbreaking research. You can take this as there not being bugs to find, or you can take it as them not being found yet ;)&lt;/p&gt;
 
-&lt;p&gt;When I saw Google CTF &lt;year&gt; had put together mobile CTF challenges you could exploit remotely on their servers, I thought it was the coolest shit. There needed to be a way to bring the realm of mobile exploitation into CTF challenges. This was the excitement that people needed to start looking at this field.&lt;/year&gt;&lt;/p&gt;
+&lt;p&gt;When I saw Google CTF had put together mobile CTF challenges you could &lt;a href=&quot;https://github.com/ctfs/write-ups-2016/tree/master/google-ctf-2016/mobile&quot;&gt;exploit remotely&lt;/a&gt; on their servers, I thought it was the coolest shit. There needed to be a way to bring the realm of mobile exploitation into CTF challenges. This was the excitement that people needed to start looking at this field.&lt;/p&gt;
 
 &lt;h2 id=&quot;-why-android-pwnables-are-hard-to-run&quot;&gt;👷 Why Android pwnables are hard to run&lt;/h2&gt;
 
@@ -130,8 +130,8 @@
 &lt;p&gt;You can check out the shitty APK submission server I put together &lt;a href=&quot;https://github.com/breadchris/apk-submission-queue&quot;&gt;here&lt;/a&gt;. If you feel inclined to work on making this better, I will for sure work with you on your PRs.&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Jun 2018 07:05:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</guid>
+        <link>https://breadchris.github.io/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</guid>
         
         
         <category>ctf</category>
@@ -521,8 +521,8 @@ stack2+164  numbers and stuff
 
 </description>
         <pubDate>Wed, 25 Nov 2015 04:00:00 -0800</pubDate>
-        <link>http://localhost:4000/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</guid>
+        <link>https://breadchris.github.io/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/exploit/heap/overflow/shellcode/2015/11/25/hipster-csaw-finals/</guid>
         
         
         <category>ctf</category>
@@ -621,8 +621,8 @@ Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RU
 
 </description>
         <pubDate>Mon, 28 Sep 2015 05:00:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</guid>
+        <link>https://breadchris.github.io/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/exploit/overflow/2015/09/28/csaw-ctf-precision/</guid>
         
         
         <category>ctf</category>
@@ -1054,8 +1054,8 @@ Contacts:
 
 </description>
         <pubDate>Mon, 28 Sep 2015 05:00:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</guid>
+        <link>https://breadchris.github.io/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/exploit/overflow/format-string/2015/09/28/csaw-ctf-contacts/</guid>
         
         
         <category>ctf</category>
@@ -1224,8 +1224,8 @@ team: ELF 32-bit LSB executable, Intel 80386, version 1 &lt;span class=&quot;o&q
 &lt;p&gt;I would show the work that I did&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 May 2015 05:00:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/format-string/2015/05/04/backdoor-team/</guid>
+        <link>https://breadchris.github.io/ctf/format-string/2015/05/04/backdoor-team/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/format-string/2015/05/04/backdoor-team/</guid>
         
         
         <category>ctf</category>
@@ -1526,8 +1526,8 @@ flag&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;something or other&lt;span cla
 &lt;p&gt;Not too bad of a challenge, really was more reversing than actually exploitation. So when it all boils down, you have to reverse a basic command protocol, exploit an integer overflow and use metacharacter injection. For 200 points I would say that is reasonable :D&lt;/p&gt;
 </description>
         <pubDate>Sat, 04 Apr 2015 05:00:00 -0700</pubDate>
-        <link>http://localhost:4000/ctf/format-string/2015/04/04/bsides-vancouver/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/format-string/2015/04/04/bsides-vancouver/</guid>
+        <link>https://breadchris.github.io/ctf/format-string/2015/04/04/bsides-vancouver/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/format-string/2015/04/04/bsides-vancouver/</guid>
         
         
         <category>ctf</category>
@@ -1563,8 +1563,8 @@ fusion@fusion:~$ sudo gdb
 
 </description>
         <pubDate>Wed, 21 Jan 2015 04:00:00 -0800</pubDate>
-        <link>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/21/fusion/</link>
-        <guid isPermaLink="true">http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/21/fusion/</guid>
+        <link>https://breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/21/fusion/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/21/fusion/</guid>
         
         
         <category>wargames</category>
@@ -1659,8 +1659,8 @@ fusion@fusion:~$ sudo gdb
 &lt;p&gt;(I used a collection of helper functions from Blankwall’s Template library. I encourage you to check it out: (&lt;a href=&quot;https://github.com/blankwall/Template&quot;&gt;Github&lt;/a&gt;)&lt;/p&gt;
 </description>
         <pubDate>Tue, 20 Jan 2015 04:00:00 -0800</pubDate>
-        <link>http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/20/fusion/</link>
-        <guid isPermaLink="true">http://localhost:4000/wargames/fusion/exploit-exercises/2015/01/20/fusion/</guid>
+        <link>https://breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/20/fusion/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/wargames/fusion/exploit-exercises/2015/01/20/fusion/</guid>
         
         
         <category>wargames</category>
@@ -1744,8 +1744,8 @@ fusion@fusion:~$ sudo gdb
 &lt;p&gt;Granted I was doing this with hindsight, it is still a simple, fun challenge to think differently about Javascript :D&lt;/p&gt;
 </description>
         <pubDate>Sat, 10 Jan 2015 06:05:00 -0800</pubDate>
-        <link>http://localhost:4000/ctf/javascript/2015/01/10/jspuzzle/</link>
-        <guid isPermaLink="true">http://localhost:4000/ctf/javascript/2015/01/10/jspuzzle/</guid>
+        <link>https://breadchris.github.io/ctf/javascript/2015/01/10/jspuzzle/</link>
+        <guid isPermaLink="true">https://breadchris.github.io/ctf/javascript/2015/01/10/jspuzzle/</guid>
         
         
         <category>ctf</category>
