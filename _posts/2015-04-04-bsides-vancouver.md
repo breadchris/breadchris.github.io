@@ -290,10 +290,10 @@ Welcome!
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
 > go asdf 65494    # 2^16 - 42 + 0 == 65494 means eax = 0
-> go asdf 65495    # 2^16 - 42 + 1 == 65494 means eax = 1
-> go asdf 65496    # 2^16 - 42 + 2 == 65494 means eax = 2
-> go asdf 65497    # 2^16 - 42 + 3 == 65494 means eax = 3
-> go asdf 65498    # 2^16 - 42 + 4 == 65494 means eax = 4
+> go asdf 65495    # 2^16 - 42 + 1 == 65495 means eax = 1
+> go asdf 65496    # 2^16 - 42 + 2 == 65496 means eax = 2
+> go asdf 65497    # 2^16 - 42 + 3 == 65497 means eax = 3
+> go asdf 65498    # 2^16 - 42 + 4 == 65498 means eax = 4
 asdf
 > 
 {% endhighlight %}
