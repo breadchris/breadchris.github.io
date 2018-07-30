@@ -20,8 +20,4 @@ I think what I have been most impressed by is the quality of writeups that we re
 
 ## Where can I go to checkout the problems?
 
-Here are the links to the problems:
-
-* h1-702 2017 - 
-* h1-202 2018 - 
-* h1-702 2018 -
+Here is the [repo](https://github.com/Hacker0x01/h1-ctf-archives) where you can find all of these problems.
